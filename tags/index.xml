@@ -7,9 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 11 Aug 2019 18:26:06 +0800</lastBuildDate>
     
 	<atom:link href="https://buyouyu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基础</title>
+      <link>https://buyouyu.github.io/tags/%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 11 Aug 2019 18:26:06 +0800</pubDate>
+      
+      <guid>https://buyouyu.github.io/tags/%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
