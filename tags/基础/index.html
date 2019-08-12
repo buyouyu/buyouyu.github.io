@@ -206,6 +206,43 @@
       
         <article class="post-entry">
   <header class="post-header">
+    <h3 class="post-title"><a href="https://buyouyu.github.io/post/vim/" class="post-link">Vim</a></h3>
+    <p class="post-meta">@布忧鱼 · Aug 12, 2019 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">1、查找文本 /abc 从当前开始查找abc
+/^abc 查找以abc为首的行
+/abc$ 查找以abc为尾的行
+?abc 向后查找字符串abc
+查找区分大小写，忽略大小写”:set ic”,调整回来输入”:set noic”
+2、替换文本 ：%s/root/tree/g把所有root替换成tree
+3、删除文本 x 删除光标所在字符
+dd 删除光标所在行
+ndd 删除包括此行的后n行文本
+dG 删除包括此行一直到文件末尾的内容
+D 删除光标位置到行尾的内容
+注意删除后的文本保留在剪切板中
+4、复制文本 p 将剪切板中的内容复制到光标后
+P 将剪切板中的内容复制到光标前
+yy 将光标所在行复制到剪切板，此命令前可加数字n，可复制多行
+yw 将光标所在单词复制到剪切板
+5、常用快捷键 在光标所在行按J就可以连接下一行
+0或者^ 光标移动到首行
+$ 光标移动至当前行的行尾
+gg 光标移动到文件开头
+G 光标移动到末尾
+:n 编辑模式下光标快速定义到指定行的行首
+6、多窗口编辑 vim -o test1.txt test2.txt
+“Ctrl&#43;WW” 切换窗口
+:r 被复制的文件名 将文件全部复制到光标所在处</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://buyouyu.github.io/post/vim/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
     <h3 class="post-title"><a href="https://buyouyu.github.io/post/git/" class="post-link">Git</a></h3>
     <p class="post-meta">@布忧鱼 · Aug 11, 2019 · 1 min read</p>
   </header>

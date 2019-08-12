@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Vim</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  <link href="///disqus.com" rel="dns-prefetch">
+  <link href="//c.disquscdn.com" rel="dns-prefetch">
+  
+  
+  
+
+  
+
+  
+  
+  <meta name="description" content="1、查找文本 /abc 从当前开始查找abc
+/^abc 查找以abc为首的行
+/abc$ 查找以abc为尾的行
+?abc 向后查找字符串abc
+查找区分大小写，忽略大小写&amp;rdquo;:set ic&amp;rdquo;,调整回来输入&amp;rdquo;:set noic&amp;rdquo;
+2、替换文本 ：%s/root/tree/g把所有root替换成tree
+3、删除文本 x 删除光标所在字符
+dd 删除光标所在行
+ndd 删除包括此行的后n行文本
+dG 删除包括此行一直到文件末尾的内容
+D 删除光标位置到行尾的内容
+注意删除后的文本保留在剪切板中
+4、复制文本 p 将剪切板中的内容复制到光标后
+P 将剪切板中的内容复制到光标前
+yy 将光标所在行复制到剪切板，此命令前可加数字n，可复制多行
+yw 将光标所在单词复制到剪切板
+5、常用快捷键 在光标所在行按J就可以连接下一行
+0或者^ 光标移动到首行
+$ 光标移动至当前行的行尾
+gg 光标移动到文件开头
+G 光标移动到末尾
+:n 编辑模式下光标快速定义到指定行的行首
+6、多窗口编辑 vim -o test1.txt test2.txt
+&amp;ldquo;Ctrl&#43;WW&amp;rdquo; 切换窗口
+:r 被复制的文件名 将文件全部复制到光标所在处">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="Vim">
+    <meta name="twitter:description" content="1、查找文本 /abc 从当前开始查找abc
+/^abc 查找以abc为首的行
+/abc$ 查找以abc为尾的行
+?abc 向后查找字符串abc
+查找区分大小写，忽略大小写&amp;rdquo;:set ic&amp;rdquo;,调整回来输入&amp;rdquo;:set noic&amp;rdquo;
+2、替换文本 ：%s/root/tree/g把所有root替换成tree
+3、删除文本 x 删除光标所在字符
+dd 删除光标所在行
+ndd 删除包括此行的后n行文本
+dG 删除包括此行一直到文件末尾的内容
+D 删除光标位置到行尾的内容
+注意删除后的文本保留在剪切板中
+4、复制文本 p 将剪切板中的内容复制到光标后
+P 将剪切板中的内容复制到光标前
+yy 将光标所在行复制到剪切板，此命令前可加数字n，可复制多行
+yw 将光标所在单词复制到剪切板
+5、常用快捷键 在光标所在行按J就可以连接下一行
+0或者^ 光标移动到首行
+$ 光标移动至当前行的行尾
+gg 光标移动到文件开头
+G 光标移动到末尾
+:n 编辑模式下光标快速定义到指定行的行首
+6、多窗口编辑 vim -o test1.txt test2.txt
+&amp;ldquo;Ctrl&#43;WW&amp;rdquo; 切换窗口
+:r 被复制的文件名 将文件全部复制到光标所在处">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vim">
+  <meta property="og:description" content="1、查找文本 /abc 从当前开始查找abc
+/^abc 查找以abc为首的行
+/abc$ 查找以abc为尾的行
+?abc 向后查找字符串abc
+查找区分大小写，忽略大小写&amp;rdquo;:set ic&amp;rdquo;,调整回来输入&amp;rdquo;:set noic&amp;rdquo;
+2、替换文本 ：%s/root/tree/g把所有root替换成tree
+3、删除文本 x 删除光标所在字符
+dd 删除光标所在行
+ndd 删除包括此行的后n行文本
+dG 删除包括此行一直到文件末尾的内容
+D 删除光标位置到行尾的内容
+注意删除后的文本保留在剪切板中
+4、复制文本 p 将剪切板中的内容复制到光标后
+P 将剪切板中的内容复制到光标前
+yy 将光标所在行复制到剪切板，此命令前可加数字n，可复制多行
+yw 将光标所在单词复制到剪切板
+5、常用快捷键 在光标所在行按J就可以连接下一行
+0或者^ 光标移动到首行
+$ 光标移动至当前行的行尾
+gg 光标移动到文件开头
+G 光标移动到末尾
+:n 编辑模式下光标快速定义到指定行的行首
+6、多窗口编辑 vim -o test1.txt test2.txt
+&amp;ldquo;Ctrl&#43;WW&amp;rdquo; 切换窗口
+:r 被复制的文件名 将文件全部复制到光标所在处">
+  <meta property="og:url" content="https://buyouyu.github.io/post/vim/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3">
+
+
+<link rel="canonical" href="https://buyouyu.github.io/post/vim/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+
+
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="布忧鱼">
+<meta name="msapplication-tooltip" content="布忧鱼">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://buyouyu.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://buyouyu.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://buyouyu.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://buyouyu.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://buyouyu.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://buyouyu.github.io/manifest.json">
+
+
+<link rel="preload" href="https://buyouyu.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://buyouyu.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://buyouyu.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://buyouyu.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="https://buyouyu.github.io/"><img class="avatar" src="https://buyouyu.github.io/images/avatar.png" alt="Avatar"></a>
+  
+  <h2 class="title"><a href="https://buyouyu.github.io/">布忧鱼</a></h2>
+  
+  <p class="subtitle">~ Keep Clam &amp; Carry On ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://buyouyu.github.io/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://github.com/buyouyu">Works</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://buyouyu.github.io/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://buyouyu.github.io/about/">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:buyouyu2@outlook.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/https://github.com/buyouyu" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/%e5%b8%83%e5%bf%a7%e9%b1%bc_" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Vim</h1>
+      <p class="post-meta">@布忧鱼 · Aug 12, 2019 · 1 min read</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="1-查找文本">1、查找文本</h3>
+
+<p>/abc 从当前开始查找abc<br />
+/^abc 查找以abc为首的行<br />
+/abc$ 查找以abc为尾的行<br />
+?abc 向后查找字符串abc<br />
+查找区分大小写，忽略大小写&rdquo;:set ic&rdquo;,调整回来输入&rdquo;:set noic&rdquo;</p>
+
+<h3 id="2-替换文本">2、替换文本</h3>
+
+<p>：%s/root/tree/g把所有root替换成tree</p>
+
+<h3 id="3-删除文本">3、删除文本</h3>
+
+<p>x 删除光标所在字符<br />
+dd 删除光标所在行<br />
+ndd 删除包括此行的后n行文本<br />
+dG 删除包括此行一直到文件末尾的内容<br />
+D 删除光标位置到行尾的内容<br />
+注意删除后的文本保留在剪切板中</p>
+
+<h3 id="4-复制文本">4、复制文本</h3>
+
+<p>p 将剪切板中的内容复制到光标后<br />
+P 将剪切板中的内容复制到光标前<br />
+yy 将光标所在行复制到剪切板，此命令前可加数字n，可复制多行<br />
+yw 将光标所在单词复制到剪切板</p>
+
+<h3 id="5-常用快捷键">5、常用快捷键</h3>
+
+<p>在光标所在行按J就可以连接下一行<br />
+0或者^ 光标移动到首行<br />
+$ 光标移动至当前行的行尾<br />
+gg 光标移动到文件开头<br />
+G 光标移动到末尾<br />
+:n 编辑模式下光标快速定义到指定行的行首</p>
+
+<h3 id="6-多窗口编辑">6、多窗口编辑</h3>
+
+<p>vim -o test1.txt test2.txt<br />
+&ldquo;Ctrl+WW&rdquo; 切换窗口<br />
+:r 被复制的文件名 将文件全部复制到光标所在处</p>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://buyouyu.github.io/tags/%E5%9F%BA%E7%A1%80"><span class="tag">基础</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        All rights reserved
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "buyouyu" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 布忧鱼</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://buyouyu.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
