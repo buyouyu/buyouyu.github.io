@@ -39,10 +39,10 @@ git diff HEAD &amp;ndash; readme.txt 工作区和最新版本的区别
 3、撤销修改 git checkout &amp;ndash; file 丢弃工作区的修改，让这个文件回到git commit或git add的状态，把工作区内容回退
 如果以及git add之后使用git reset HEAD readme.txt可以把add的修改回退到工作区，把暂存区内容回退
 4、删除 当工作区的文件被删除之后，工作区和版本库不一致。
-（1）、从版本库删除文件
+####（1）、从版本库删除文件
 git rm test.txt
 git commit -m &amp;ldquo;remove test.txt&amp;rdquo;
-（2）、同步被删除的文件到工作区
+####（2）、同步被删除的文件到工作区
 git checkout &amp;ndash; test.">
 
   
@@ -63,10 +63,10 @@ git diff HEAD &amp;ndash; readme.txt 工作区和最新版本的区别
 3、撤销修改 git checkout &amp;ndash; file 丢弃工作区的修改，让这个文件回到git commit或git add的状态，把工作区内容回退
 如果以及git add之后使用git reset HEAD readme.txt可以把add的修改回退到工作区，把暂存区内容回退
 4、删除 当工作区的文件被删除之后，工作区和版本库不一致。
-（1）、从版本库删除文件
+####（1）、从版本库删除文件
 git rm test.txt
 git commit -m &amp;ldquo;remove test.txt&amp;rdquo;
-（2）、同步被删除的文件到工作区
+####（2）、同步被删除的文件到工作区
 git checkout &amp;ndash; test.">
     <meta name="twitter:image" content="/images/avatar.png">
   
@@ -87,10 +87,10 @@ git diff HEAD &amp;ndash; readme.txt 工作区和最新版本的区别
 3、撤销修改 git checkout &amp;ndash; file 丢弃工作区的修改，让这个文件回到git commit或git add的状态，把工作区内容回退
 如果以及git add之后使用git reset HEAD readme.txt可以把add的修改回退到工作区，把暂存区内容回退
 4、删除 当工作区的文件被删除之后，工作区和版本库不一致。
-（1）、从版本库删除文件
+####（1）、从版本库删除文件
 git rm test.txt
 git commit -m &amp;ldquo;remove test.txt&amp;rdquo;
-（2）、同步被删除的文件到工作区
+####（2）、同步被删除的文件到工作区
 git checkout &amp;ndash; test.">
   <meta property="og:url" content="https://buyouyu.github.io/post/git/">
   <meta property="og:image" content="/images/avatar.png">
@@ -260,7 +260,7 @@ git checkout &amp;ndash; test.">
     </header>
     <article class="post-content">
 
-<h2 id="1-基本使用">1、基本使用</h2>
+<h3 id="1-基本使用">1、基本使用</h3>
 
 <p>git init把目录变成可管理的仓库<br />
  git add readme.txt把文件添加到仓库<br />
@@ -269,28 +269,28 @@ git checkout &amp;ndash; test.">
  git diff readme.txt查看文件修改的状态<br />
  git log查看历史记录 可选参数 &ndash;pretty=oneline</p>
 
-<h2 id="2-版本回退">2、版本回退</h2>
+<h3 id="2-版本回退">2、版本回退</h3>
 
 <p>git reset &ndash;hard HEAD^ 回退上一个版本，HEAD^^ 两个，HEAD~100<br />
  git reset &ndash;hard 版本号<br />
  git reflog记录每一个版本<br />
  git diff HEAD &ndash; readme.txt 工作区和最新版本的区别</p>
 
-<h2 id="3-撤销修改">3、撤销修改</h2>
+<h3 id="3-撤销修改">3、撤销修改</h3>
 
 <p>git checkout &ndash; file 丢弃工作区的修改，让这个文件回到git commit或git add的状态，把工作区内容回退<br />
 如果以及git add之后使用git reset HEAD readme.txt可以把add的修改回退到工作区，把暂存区内容回退</p>
 
-<h2 id="4-删除">4、删除</h2>
+<h3 id="4-删除">4、删除</h3>
 
 <p>当工作区的文件被删除之后，工作区和版本库不一致。<br />
-（1）、从版本库删除文件<br />
+####（1）、从版本库删除文件<br />
  git rm test.txt<br />
  git commit -m &ldquo;remove test.txt&rdquo;<br />
-（2）、同步被删除的文件到工作区<br />
+####（2）、同步被删除的文件到工作区<br />
  git checkout &ndash; test.txt 使用版本库里的版本替换工作区中的版本</p>
 
-<h2 id="5-远程仓库">5、远程仓库</h2>
+<h3 id="5-远程仓库">5、远程仓库</h3>
 
 <p>ssh-keygen -t rsa -C &ldquo;youremail@example.com&rdquo;创建SSH key<br />
  把本地仓库推送出去:<br />
@@ -298,7 +298,7 @@ git checkout &amp;ndash; test.">
  git push -u origin master之后就不需要再加-u参数了。<br />
  git clone git@github.com:buyouyu/gitskills.git</p>
 
-<h2 id="6-分支管理">6、分支管理</h2>
+<h3 id="6-分支管理">6、分支管理</h3>
 
 <p>创建dev分支并且切换到dev<br />
  git checkout -b dev 等价于git branch dev和git checkout dev切换分支<br />

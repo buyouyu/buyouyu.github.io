@@ -31,10 +31,10 @@ git diff HEAD &amp;ndash; readme.txt 工作区和最新版本的区别
 3、撤销修改 git checkout &amp;ndash; file 丢弃工作区的修改，让这个文件回到git commit或git add的状态，把工作区内容回退
 如果以及git add之后使用git reset HEAD readme.txt可以把add的修改回退到工作区，把暂存区内容回退
 4、删除 当工作区的文件被删除之后，工作区和版本库不一致。
-（1）、从版本库删除文件
+####（1）、从版本库删除文件
 git rm test.txt
 git commit -m &amp;ldquo;remove test.txt&amp;rdquo;
-（2）、同步被删除的文件到工作区
+####（2）、同步被删除的文件到工作区
 git checkout &amp;ndash; test.</description>
     </item>
     
